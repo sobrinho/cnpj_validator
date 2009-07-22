@@ -1,4 +1,4 @@
-ValidateAsCnpj
+ValidatesAsCnpj
 ==============
 
 This is a refactoring with i18n support of original plugin made by OSS:
