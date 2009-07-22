@@ -1,0 +1,5 @@
+pt-BR:
+  activerecord:
+    errors:
+      messages:
+        invalid_cnpj: 'não é um CNPJ válido'
