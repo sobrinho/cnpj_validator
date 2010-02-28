@@ -6,16 +6,16 @@ h2. Installation
 
 You can install as gem:
 
-<pre>config.gem "validates_as_cnpj"</pre>
+<pre>gem "validates_as_cnpj"</pre>
 
 Or as plugin:
 
-<pre>$ script/plugin install git://github.com/sobrinho/validates_as_cnpj.git</pre>
+<pre>$ rails plugin install git://github.com/sobrinho/validates_as_cnpj.git</pre>
 
 h2. Usage
 
 <pre>class Company < ActiveRecord::Base
-  validates_as_cnpj :document
+  validates :document, :cnpj => true
 end</pre>
 
 h2. License
