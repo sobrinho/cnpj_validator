@@ -1,0 +1,23 @@
+h1. ValidatesAsCnpj
+
+This gem is based on *OSS* works in "https://projetos.ossystems.com.br/projects/plugonrails/repository/browse/plugins/validates_as_cnpj":https://projetos.ossystems.com.br/projects/plugonrails/repository/browse/plugins/validates_as_cnpj
+
+h2. Installation
+
+You can install as gem:
+
+<pre>config.gem "validates_as_cnpj"</pre>
+
+Or as plugin:
+
+<pre>$ script/plugin install git://github.com/sobrinho/validates_as_cnpj.git</pre>
+
+h2. Usage
+
+<pre>class Company < ActiveRecord::Base
+  validates_as_cnpj :document
+end</pre>
+
+h2. License
+
+Copyright (c) 2009-2010 Gabriel Sobrinho, released under the MIT license
