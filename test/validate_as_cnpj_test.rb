@@ -6,9 +6,9 @@ class ValidatesAsCnpjTest < ActiveSupport::TestCase
   end
   
   test "blank values" do
-    assert_equal false, Company.new(:document => '').valid?
-    assert_equal false, Company.new(:document => false).valid?
-    assert_equal false, Company.new(:document => nil).valid?
+    ['', false, nil].each do |cnpj|
+      assert Company.new(:document => cnpj).invalid?
+    end
   end
   
   test "black list" do
