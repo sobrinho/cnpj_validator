@@ -1,21 +1,15 @@
 h1. CnpjValidator
 
-This gem is based on *OSS* works in "https://projetos.ossystems.com.br/projects/plugonrails/repository/browse/plugins/validates_as_cnpj":https://projetos.ossystems.com.br/projects/plugonrails/repository/browse/plugins/validates_as_cnpj
+CNPJ validation for ActiveModel
 
 h2. Installation
 
-You can install as gem:
-
 <pre>gem "cnpj_validator"</pre>
-
-Or as plugin:
-
-<pre>$ rails plugin install git://github.com/sobrinho/cnpj_validator.git</pre>
 
 h2. Usage
 
 <pre>class Company < ActiveRecord::Base
-  validates :document, :cnpj => true
+  validates :cnpj, :cnpj => true
 end</pre>
 
 h2. License
