@@ -45,7 +45,7 @@ module CNPJ
 
     result == cnpj[13]
   end
-  
+
   def self.invalid?(cnpj)
     !valid?(cnpj)
   end
