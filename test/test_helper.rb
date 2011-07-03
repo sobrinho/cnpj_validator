@@ -1,17 +1,10 @@
 require 'rubygems'
 require 'test/unit'
-require 'active_support'
-require 'active_record'
+require 'active_model'
 require 'cnpj_validator'
+require 'ostruct'
 
-# create a temporary database
-ActiveRecord::Base.establish_connection :adapter => 'sqlite3', :database => ':memory:'
-
-silence_stream(STDOUT) do
-  ActiveRecord::Schema.define do
-    create_table :companies do |t|
-      t.string :name
-      t.string :document
-    end
-  end
+class Company < OpenStruct
+  include ActiveModel::Validations
+  validates :cnpj, :cnpj => true
 end

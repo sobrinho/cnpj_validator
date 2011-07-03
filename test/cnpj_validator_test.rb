@@ -1,35 +1,43 @@
 require 'test_helper'
 
-class CnpjValidatorTest < ActiveSupport::TestCase
-  class Company < ActiveRecord::Base
-    validates :document, :cnpj => true
-  end
-
-  test "blank values" do
-    ['', false, nil].each do |cnpj|
-      assert Company.new(:document => cnpj).invalid?
+class CnpjValidatorTest < Test::Unit::TestCase
+  def test_black_list
+    %w(00000000000000 11111111111111 22222222222222 33333333333333
+       44444444444444 55555555555555 66666666666666 77777777777777
+       88888888888888 99999999999999).each do |number|
+      assert_invalid number
     end
   end
 
-  test "black list" do
-    CNPJ::BLACK_LIST.each do |cnpj|
-      assert_equal false, Company.new(:document => cnpj).valid?
-    end
+  def test_invalid
+    assert_invalid '50.108.399/7175-07'
+    assert_invalid '77.017.159/3095-80'
+    assert_invalid '03.971.701/5859-70'
   end
 
-  test "only digits" do
-    assert Company.new(:document => '41821571000174').valid?
+  def test_masked
+    assert_valid '38.417.923/0001-16'
+    assert_valid '43.010.889/0001-09'
+    assert_valid '85.113.468/0001-45'
   end
 
-  test "with mask" do
-    assert Company.new(:document => '41.821.571/0001-74').valid?
+  def test_unmasked
+    assert_valid '38417923000116'
+    assert_valid '43010889000109'
+    assert_valid '85113468000145'
   end
 
-  test "integer value" do
-    assert Company.new(:document => 41821571000174).valid?
+  protected
+
+  def assert_valid(cnpj)
+    assert company(:cnpj => cnpj).valid?
   end
 
-  test "integer value missing 0" do
-    assert Company.new(:document => 3133161000141).valid?
+  def assert_invalid(cnpj)
+    assert company(:cnpj => cnpj).invalid?
+  end
+
+  def company(attributes = {})
+    Company.new(attributes)
   end
 end
