@@ -1,11 +1,11 @@
 # -*- encoding: utf-8 -*-
 Gem::Specification.new do |s|
-  s.name        = "validates_as_cnpj"
+  s.name        = "cnpj_validator"
   s.version     = "0.2.1"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Gabriel Sobrinho"]
   s.email       = ["gabriel.sobrinho@gmail.com"]
-  s.homepage    = "https://github.com/sobrinho/validates_as_cnpj"
+  s.homepage    = "https://github.com/sobrinho/cnpj_validator"
   s.summary     = %q{CNPJ validation for ActiveModel}
 
   s.files         = `git ls-files`.split("\n")

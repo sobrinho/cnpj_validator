@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ValidatesAsCnpjTest < ActiveSupport::TestCase
+class CnpjValidatorTest < ActiveSupport::TestCase
   class Company < ActiveRecord::Base
     validates :document, :cnpj => true
   end

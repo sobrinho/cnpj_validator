@@ -2,8 +2,7 @@ require 'rubygems'
 require 'test/unit'
 require 'active_support'
 require 'active_record'
-require 'validates_as_cnpj/cnpj_validator'
-require 'validates_as_cnpj/cnpj'
+require 'cnpj_validator'
 
 # create a temporary database
 ActiveRecord::Base.establish_connection :adapter => 'sqlite3', :database => ':memory:'
