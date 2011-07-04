@@ -6,7 +6,7 @@ class CnpjValidator::Cnpj
   attr_reader :number
 
   def initialize(number)
-    @number = number
+    @number = number.to_s
   end
 
   def digits

@@ -15,6 +15,12 @@ class CnpjValidatorTest < Test::Unit::TestCase
     assert_invalid '03.971.701/5859-70'
   end
 
+  def test_blank_values
+    assert_invalid ''
+    assert_invalid false
+    assert_invalid nil
+  end
+
   def test_masked
     assert_valid '38.417.923/0001-16'
     assert_valid '43.010.889/0001-09'
