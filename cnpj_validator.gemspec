@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Gabriel Sobrinho"]
   s.email       = ["gabriel.sobrinho@gmail.com"]
-  s.homepage    = "https://github.com/sobrinho/cnpj_validator"
+  s.homepage    = "https://github.com/nohupbrasil/cnpj_validator"
   s.summary     = %q{CNPJ validation for ActiveModel}
 
   s.files         = `git ls-files`.split("\n")
